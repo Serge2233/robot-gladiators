@@ -28,7 +28,7 @@ var fight = function(enemy) {
       }
     }
 
-    // generate random damage value based on player's attack power
+    
     var damage = randomNumber(playerInfo.attack - 3, playerInfo.attack);
 
     enemy.health = Math.max(0, enemy.health - damage);
@@ -43,7 +43,7 @@ var fight = function(enemy) {
       // award player money for winning
       playerInfo.money = playerInfo.money + 20;
 
-      // leave while() loop since enemy is dead
+     
       break;
     } else {
       window.alert(enemy.name + ' still has ' + enemy.health + ' health left.');
@@ -74,7 +74,7 @@ var startGame = function() {
   // reset player stats
   playerInfo.reset();
 
-  // fight each enemy robot by looping over them and fighting them one at a time
+  
   for (var i = 0; i < enemyInfo.length; i++) {
     // if player is still alive, keep fight next enemy
     if (playerInfo.health > 0) {
@@ -90,7 +90,7 @@ var startGame = function() {
       // pass the pickedEnemyObj object variable's value into the fight function, where it will assume the value of the enemy parameter
       fight(pickedEnemyObj);
 
-      // if player is still alive and we're not at the last enemy in the array
+     
       if (playerInfo.health > 0 && i < enemyInfo.length - 1) {
         // ask if player wants to use the store before next round
         var storeConfirm = window.confirm("The fight is over, visit the store before the next round?");
@@ -108,7 +108,7 @@ var startGame = function() {
     }
   }
 
-  // after loop ends, we are either out of player.health or enemies to fight, so run the endGame function
+  
   endGame();
 };
 
@@ -140,7 +140,7 @@ var shop = function() {
     'Would you like to REFILL your health, UPGRADE your attack, or LEAVE the store? Please enter one "REFILL", "UPGRADE", or "LEAVE" to make a choice.'
   );
 
-  // use switch case to carry out action
+  
   switch (shopOptionPrompt) {
     case 'REFILL':
     case 'refill':
